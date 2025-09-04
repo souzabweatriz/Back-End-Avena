@@ -20,7 +20,7 @@ const createRemedio = async (nome_remedio, efeito_remedio, photo, modo_preparo, 
 
 const updateRemedio = async (id, nome_remedio, efeito_remedio, photo, modo_preparo, contraindicacoes, categoria_id) => {
     const result = await pool.query(
-        "UPDATE remedios SET nome_remedio = $1, efeito_remedio = $2, photo = $3, modo_preparo = $4, contraindicacoes = $5, categoria_id = $6 WHERE id = $8 RETURNING *",
+        "UPDATE remedios SET nome_remedio = $1, efeito_remedio = $2, photo = $3, modo_preparo = $4, contraindicacoes = $5, categoria_id = $6 WHERE id = $7 RETURNING *",
         [nome_remedio, efeito_remedio, photo, modo_preparo, contraindicacoes, categoria_id, id]
     );
     return result.rows[0];

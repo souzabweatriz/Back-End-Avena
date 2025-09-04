@@ -34,8 +34,8 @@ const createRemedio = async (req, res) => {
 
 const updateRemedio = async (req, res) => {
     try {
-        const { nome_remedio, descricao, beneficios, photo, modo_preparo, contraindicacoes, categoria_id } = req.body;
-        const updatedRemedio = await remedioModel.updateRemedio(req.params.id, nome_remedio, descricao, beneficios, photo, modo_preparo, contraindicacoes, categoria_id);
+        const { nome_remedio, efeito_remedio, photo, modo_preparo, contraindicacoes, categoria_id } = req.body;
+        const updatedRemedio = await remedioModel.updateRemedio(req.params.id, nome_remedio, efeito_remedio, photo, modo_preparo, contraindicacoes, categoria_id);
         if (!updatedRemedio) {
             return res.status(404).json({ error: 'Remédio não encontrado' });
         }
