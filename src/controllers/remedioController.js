@@ -23,8 +23,8 @@ const getRemedioById = async (req, res) => {
 
 const createRemedio = async (req, res) => {
     try {
-        const { nome_remedio, descricao, beneficios, photo, modo_preparo, contraindicacoes, categoria_id } = req.body;
-        const newRemedio = await remedioModel.createRemedio(nome_remedio, descricao, beneficios, photo, modo_preparo, contraindicacoes, categoria_id);
+        const { nome_remedio, efeito_remedio, photo, modo_preparo, contraindicacoes, categoria_id } = req.body;
+        const newRemedio = await remedioModel.createRemedio(nome_remedio, efeito_remedio, photo, modo_preparo, contraindicacoes, categoria_id);
         res.status(201).json(newRemedio);
     }
     catch (error) {
