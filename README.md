@@ -87,41 +87,41 @@ Permite operações completas de **CRUD** (criar, ler, atualizar e deletar) sobr
 
 ## 🧪 Testando a API com Postman
 
+
 Instale o Postman → [Download](https://www.postman.com/downloads/)
 
 Inicie o servidor da API (`npm run dev` ou `npm start`).
 
-No Postman, crie uma nova requisição com a URL base:
+### 🔎 Exemplos de uso da rota de recomendação
+
+Para receber recomendações de remédios com base em sintomas, utilize:
 
 ```
-http://localhost:3000/remedios
+GET http://localhost:4000/api/recomendar?comoEsta=insônia
+GET http://localhost:4000/api/recomendar?comoEsta=corpo dói
+GET http://localhost:4000/api/recomendar?comoEsta=queimação
+GET http://localhost:4000/api/recomendar?comoEsta=má digestão
+GET http://localhost:4000/api/recomendar?comoEsta=relaxar
+GET http://localhost:4000/api/recomendar?comoEsta=ansiedade
+GET http://localhost:4000/api/recomendar?comoEsta=estômago
+GET http://localhost:4000/api/recomendar?comoEsta=dores musculares
+GET http://localhost:4000/api/recomendar?comoEsta=dor de cabeça
+GET http://localhost:4000/api/recomendar?comoEsta=cabeça
+GET http://localhost:4000/api/recomendar?comoEsta=gripe
+GET http://localhost:4000/api/recomendar?comoEsta=cólicas
 ```
 
-Escolha o método HTTP desejado (GET, POST, PUT, DELETE).
+Você pode testar cada sintoma acima e receber os remédios recomendados para cada caso.
 
-Para POST/PUT → selecione Body > raw > JSON e insira algo como:
+### Exemplos de outras rotas
 
-```json
-{
-   "id": 2,
-   "nome_remedio": "Chá Verde",
-   "efeito_remedio": "Acelera o metabolismo",
-   "photo": "link-da-imagem",
-   "modo_preparo": "Infusão por 3 minutos",
-   "contraindicacoes": "Evitar consumo excessivo",
-   "categoria_id": 2
-}
-```
+- `GET http://localhost:4000/api/remedios` → Lista todos os remédios
+- `GET http://localhost:4000/api/remedios/1` → Busca remédio por ID
+- `POST http://localhost:4000/api/remedios` → Criar novo remédio
+- `PUT http://localhost:4000/api/remedios/1` → Atualizar remédio
+- `DELETE http://localhost:4000/api/remedios/1` → Deletar remédio
 
-Clique em Send 🚀
-
-**Exemplos prontos:**
-
-- `GET http://localhost:3000/remedios` → Lista todos
-- `GET http://localhost:3000/remedios/1` → Busca por ID
-- `POST http://localhost:3000/remedios` → Criar
-- `PUT http://localhost:3000/remedios/1` → Atualizar
-- `DELETE http://localhost:3000/remedios/1` → Deletar
+Clique em Send 🚀 para ver o resultado.
 
 ## 📂 Estrutura do Projeto
 Back-End-Avena/
